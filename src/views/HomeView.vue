@@ -52,11 +52,11 @@ export default {
 
     onMounted(() => {
       // console.log(process.env.VUE_APP_MAPBOX_API_KEY)
-      console.log( `https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token=${process.env.VUE_APP_MAPBOX_API_KEY}`)
-      mymap = leaflet.map("mapid").setView([35.4676, -97.5164], 9);
+      console.log( `https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token=pk.eyJ1IjoiYW5udW5ha2k4OCIsImEiOiJjbGQ3YWg5dHQwbGtjM3FtbXdkZDh6YnVmIn0.A0Id6V1LdWUMhg9V9b363g`)
+      mymap = leaflet.map("mapid").setView([-28.4792625 , 23.6727135], 7);
       leaflet
         .tileLayer(
-          `https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token=${process.env.VUE_APP_MAPBOX_API_KEY}`,
+          `https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token=pk.eyJ1IjoiYW5udW5ha2k4OCIsImEiOiJjbGQ3YWg5dHQwbGtjM3FtbXdkZDh6YnVmIn0.A0Id6V1LdWUMhg9V9b363g`,
                
           {
             attribution:
@@ -65,7 +65,7 @@ export default {
             id: "mapbox/streets-v11",
             tileSize: 512,  
             zoomOffset: -1,
-            accessToken: process.env.VUE_APP_MAPBOX_API_KEY
+            accessToken: "pk.eyJ1IjoiYW5udW5ha2k4OCIsImEiOiJjbGQ3YWg5dHQwbGtjM3FtbXdkZDh6YnVmIn0.A0Id6V1LdWUMhg9V9b363g",
           }
         )
         .addTo(mymap);
@@ -76,7 +76,7 @@ export default {
         const getIpInfo = async () => {
           try {
             const data = await axios.get(
-              `https://geo.ipify.org/api/v2/country,city?apiKey=${process.env.VUE_APP_GEO_API_KEY}&ipAddress=${queryIp.value}`
+              `https://geo.ipify.org/api/v2/country,city?apiKey=at_z2MqMaEQjof0hA0rNPRFGdXyNSQVt&ipAddress=${queryIp.value}`
 
             );
             const result = data.data; 
